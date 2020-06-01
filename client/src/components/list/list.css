@@ -1,0 +1,17 @@
+ul {
+    list-style: none;
+    padding: 0;
+  }
+  
+  .delete {
+    float: right;
+    margin-right: 10px;
+  }
+
+  li {
+    background-color: #EEEEEE;
+    border: 1px solid #DDDDDD;
+    margin: auto;
+    margin-bottom: 5px;
+    width: 50%;
+  }

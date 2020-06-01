@@ -24,7 +24,7 @@ const typeDefs = gql`
 
     type Mutation {
         addUser(firstName: String, age: Int): User
-        deleteUser(id: String): User
+        deleteUser(id: String!): User
         editUser(firstName: String, age: Int, id: String, companyId: Int): User
     }
 

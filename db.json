@@ -1,49 +1,27 @@
 {
   "users": [
     {
-      "id": "20",
-      "firstName": "Bill",
-      "age": 20,
-      "companyId": 1
-    },
-    {
-      "id": "21",
-      "firstName": "Billie",
-      "age": 20,
-      "companyId": 2
-    },
-    {
-      "id": "1",
-      "firstName": "Samantha",
-      "age": 23,
-      "companyId": 2
-    },
-    {
-      "firstName": "stepehn",
-      "age": 40,
-      "id": "mgXRDyQ",
-      "companyId": 2
-    },
-    {
-      "firstName": "stepehn",
-      "age": 40,
-      "id": "7Mua2pd",
-      "companyId": 1
-    },
-    {
       "firstName": "Ruta",
       "age": 23,
       "id": "CWuR32j"
     },
     {
-      "firstName": "Ruta",
-      "age": 23,
-      "id": "Z_2IHYe"
-    },
-    {
       "firstName": "sushi",
       "age": 3,
       "id": "oYZ2jzO"
+    },
+    {
+      "firstName": "jul",
+      "age": 20,
+      "id": "qgpYwV5"
+    },
+    {
+      "firstName": "Jil",
+      "id": "RwCJjN-"
+    },
+    {
+      "firstName": "Kira",
+      "id": "b0iovfT"
     }
   ],
   "companies": [

@@ -55,7 +55,7 @@ module.exports = {
     },
 
     deleteUser(parentValue, args) {
-      return axios.delete(`https://localhost:3000/users/${args.id}`)
+      return axios.delete(`http://localhost:3000/users/${args.id}`)
         .then(res => res.data)
     }
   }
