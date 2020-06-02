@@ -1,4 +1,4 @@
-# user2
+# user-Graphql
 
 ## Objective:
 - To implement graphql basics right from adding querys and mutation in schema.
