@@ -9,6 +9,7 @@
 - Both the ways of implementation i.e functional and class component has been used
 
 ## Development
+- `cd server`
 - `npm run run-dev` This will start the json-server on http://localhost:3000/users, start the react app on http://localhost:5000/ and runs the GraphQl playground on http://localhost:4000/graphql
 <br>
 <img alt="MarvelApp" height="500px" width="738px" src="https://github.com/KrantiBrid98/user2/blob/master/image.png">
