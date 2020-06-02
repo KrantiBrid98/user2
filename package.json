@@ -7,7 +7,8 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "start-server": "json-server --watch db.json",
     "start": "nodemon server.js",
-    "client": "npm start --prefix client"
+    "client": "npm start --prefix client",
+    "run-dev": "concurrently --kill-others \"npm start\" \"npm run start-server\" \"npm run client\""
   },
   "keywords": [],
   "author": "",
@@ -21,5 +22,8 @@
     "graphql-tools": "^6.0.0",
     "json-server": "^0.16.1",
     "nodemon": "^2.0.4"
+  },
+  "devDependencies": {
+    "concurrently": "^5.2.0"
   }
 }

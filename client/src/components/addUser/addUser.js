@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 import gql from 'graphql-tag';
-import { useMutation } from '@apollo/react-hooks';
+import { Mutation } from 'react-apollo'
 
 const ADD_USER = gql`
 mutation addUser($firstName:String!) {
@@ -11,26 +11,37 @@ mutation addUser($firstName:String!) {
   }
 `;
 
-const AddUser = () => {
-    const [user, setUser] = useState('')
-    const [addUser] = useMutation(ADD_USER);
-
-    const onInputChange = e => {
-        setUser(e.target.value)
+class AddUser extends React.Component {
+    state = {
+        user: ''
     }
 
-    return (
-        <div>
-            <form onSubmit={e => {
-                e.preventDefault();
-                addUser({ variables: { firstName: user } });
-            }}>
+    onInputChange = e => {
+        this.setState({ user: e.target.value })
+    }
 
-                <input placeholder='Enter User name' onChange={(e) => onInputChange(e)} />
-                <button style={{margin: '10px'}}>Add</button>
-            </form>
-        </div>
-    )
+    render() {
+        return (
+            <div>
+                <Mutation mutation={ADD_USER}>
+                    {
+                        (addUser, { data }) => (
+                            <form onSubmit={e => {
+                                e.preventDefault();
+                                addUser({ variables: { firstName: this.state.user } });
+                            }}>
+
+                                <input placeholder='Enter User name' onChange={(e) => this.onInputChange(e)} />
+                                <button style={{ margin: '10px' }}>Add</button>
+                            </form>
+                        )
+                    }
+
+                </Mutation>
+            </div >
+        )
+    }
+
 }
 
 export default AddUser;

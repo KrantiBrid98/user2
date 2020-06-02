@@ -1,6 +1,6 @@
-import React, { useState, useEffect } from 'react'
-import { useQuery, useMutation } from '@apollo/react-hooks';
+import React from 'react'
 import { gql } from 'apollo-boost';
+import { Mutation, Query } from 'react-apollo'
 
 import './list.css'
 
@@ -23,30 +23,46 @@ mutation deleteUser($id:String!) {
 `;
 
 
-const List = () => {
-  // const [userdata, setUserData] = useState([])
-  const [deleteUser] = useMutation(DELETE_USER, {
-    refetchQueries: mutationResult => [{ query: USER_QUERY }] // refetchQury will fetch the updated list of users and remove the deleted user from user list from screen
-  });
+class List extends React.Component {
+  render() {
+    return (
+      <Query query={USER_QUERY}>
+        {({ loading, error, data }) => {
+          if (loading) return <p>Loading...</p>;
+          if (error) return <p>Error :(</p>;
 
-  const { loading, error, data } = useQuery(USER_QUERY);
+          return (
+            <ul>
+              {
+                data.users.map(user => {
+                  return <><li key={user.id}>
+                    {user.firstName}
+                    <Mutation
+                      mutation={DELETE_USER}
+                      refetchQueries={() => {
+                        return [{
+                          query: USER_QUERY
+                        }];
+                      }}
+                    >{
+                        (deleteUser) => (
+                          <button className='delete' onClick={(e) => {
+                            e.preventDefault();
+                            deleteUser({ variables: { id: user.id } });
+                          }}>delete</button>
+                        )
+                      }
+                    </Mutation>
+                  </li></>
+                })
+              }
 
-  if (loading) return <p>Loading...</p>;
-  if (error) return <p>Error :(</p>;
-  return <ul>
-    {
-      data.users.map(user => {
-        return <><li key={user.id}>
-          {user.firstName}
-          <button className='delete' onClick={(e) => {
-            e.preventDefault();
-            deleteUser({ variables: { id: user.id } });
-          }}>delete</button>
-        </li></>
-      })
-    }
-
-  </ul>
+            </ul>
+          )
+        }}
+      </Query>
+    )
+  }
 }
 
 export default List
