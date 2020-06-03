@@ -1,0 +1,35 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Mutation add user to list 1`] = `
+Object {
+  "data": Object {
+    "addUser": null,
+  },
+  "errors": Array [
+    [GraphQLError: Network Error],
+  ],
+  "extensions": undefined,
+  "http": Object {
+    "headers": Headers {
+      Symbol(map): Object {},
+    },
+  },
+}
+`;
+
+exports[`Query fetch list of users 1`] = `
+Object {
+  "data": Object {
+    "users": null,
+  },
+  "errors": Array [
+    [GraphQLError: Network Error],
+  ],
+  "extensions": undefined,
+  "http": Object {
+    "headers": Headers {
+      Symbol(map): Object {},
+    },
+  },
+}
+`;

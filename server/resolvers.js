@@ -5,7 +5,6 @@ module.exports = {
   // Query resolvers
   Query: {
     users: (parentValue, args) => {
-      console.log(parentValue, 'paremtva')
       return axios.get(`http://localhost:3000/users`)
         .then(res => res.data)
     },
@@ -16,7 +15,6 @@ module.exports = {
     },
 
     companies: (parentValue, args) => {
-      console.log(parentValue, args, 'paremtva')
       return axios.get(`http://localhost:3000/companies`)
         .then(res => res.data)
     }
@@ -49,7 +47,6 @@ module.exports = {
     },
 
     editUser(parentValue, args) {
-      console.log(args.id, 'patch')
       return axios.patch(`https://jsonplaceholder.typicode.com/users/${args.id}`, args)
         .then(res => res.data)
     },
