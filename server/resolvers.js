@@ -40,6 +40,7 @@ module.exports = {
   Mutation: {
     addUser(parentValue, args) {
       return axios.post('http://localhost:3000/users/', {
+        id: args.id,
         firstName: args.firstName,
         age: args.age
       })

@@ -9,10 +9,12 @@ describe('Mutation', () => {
             addUser.mockReturnValueOnce([{ firstName: 'TestUser1' }]);
 
             const args = {
+                id: '301',
                 firstName: 'TestUser1',
                 age: 5
             };
             const expectedResult = {
+                id: '301',
                 firstName: 'TestUser1',
                 age: 5
             };
