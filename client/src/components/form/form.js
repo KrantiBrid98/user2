@@ -9,7 +9,7 @@ class Form extends React.Component {
     render(){
         return(
             <div>
-                <button style={{margin: '20px'}} onClick={()=>this.setState({showUser: true})}>Show User</button>
+                <button data-testid='button' style={{margin: '20px'}} onClick={()=>this.setState({showUser: true})}>Show User</button>
                 {this.state.showUser ? <List/> : <div></div>}
             </div>
         )
