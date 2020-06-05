@@ -3,6 +3,11 @@
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
+  "jest": {
+    "transformIgnorePatterns": [
+      "/node_modules/"
+    ]
+  },
   "scripts": {
     "test": "jest",
     "start-server": "json-server --watch db.json",
@@ -22,7 +27,8 @@
     "graphql": "^15.0.0",
     "graphql-tools": "^6.0.0",
     "json-server": "^0.16.1",
-    "nodemon": "^2.0.4"
+    "nodemon": "^2.0.4",
+    "typescript": "^3.9.5"
   },
   "devDependencies": {
     "concurrently": "^5.2.0",

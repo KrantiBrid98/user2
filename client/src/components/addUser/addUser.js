@@ -2,7 +2,7 @@ import React, { useState } from 'react'
 import gql from 'graphql-tag';
 import { Mutation } from 'react-apollo'
 
-const ADD_USER = gql`
+export const ADD_USER = gql`
 mutation addUser($firstName:String!) {
     addUser(firstName: $firstName){
         id
@@ -22,7 +22,7 @@ class AddUser extends React.Component {
 
     render() {
         return (
-            <div>
+            <div data-testid="user-form">
                 <Mutation mutation={ADD_USER}>
                     {
                         (addUser, { data }) => (

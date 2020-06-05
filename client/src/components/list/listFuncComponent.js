@@ -4,7 +4,7 @@ import { gql } from 'apollo-boost';
 
 import './list.css'
 
-const USER_QUERY = gql`   
+export const USER_QUERY = gql`   
 {
     users{
       firstName
@@ -13,7 +13,7 @@ const USER_QUERY = gql`
 }
 `
 
-const DELETE_USER = gql`
+export const DELETE_USER = gql`
 mutation deleteUser($id:String!) {
   deleteUser(id: $id){
         id
@@ -27,6 +27,7 @@ const List = () => {
   const [deleteUser] = useMutation(DELETE_USER, {
     refetchQueries: mutationResult => [{ query: USER_QUERY }] // refetchQury will fetch the updated list of users and remove the deleted user from user list from screen
   });
+
   const { loading, error, data } = useQuery(USER_QUERY);
   if (loading) return <p>Loading...</p>;
   if (error) return <p>Error :(</p>;
