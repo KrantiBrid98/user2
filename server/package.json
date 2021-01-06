@@ -22,7 +22,7 @@
     "apollo-server": "^2.13.1",
     "apollo-server-express": "^2.13.1",
     "apollo-server-testing": "^2.14.1",
-    "axios": "^0.19.2",
+    "axios": "^0.21.1",
     "express": "^4.17.1",
     "graphql": "^15.0.0",
     "graphql-tools": "^6.0.0",
